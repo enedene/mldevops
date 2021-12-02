@@ -1,0 +1,12 @@
+__pycache__
+.ipynb_checkpoints
+.venv
+*.pyc
+*.egg-info/
+.idea
+.DS_Store
+
+# R specific
+**.Rproj.user
+**.Rproj
+**.Rhistory
