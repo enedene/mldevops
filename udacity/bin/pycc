@@ -1,3 +1,0 @@
-#!/media/huge/Projects/MOOC/mldevops/udacity/bin/python
-from numba.pycc import main
-main()
