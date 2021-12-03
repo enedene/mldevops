@@ -1,4 +1,5 @@
 __pycache__
+udacity
 .ipynb_checkpoints
 .venv
 *.pyc
@@ -6,7 +7,3 @@ __pycache__
 .idea
 .DS_Store
 
-# R specific
-**.Rproj.user
-**.Rproj
-**.Rhistory
