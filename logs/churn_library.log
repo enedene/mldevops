@@ -5,4 +5,4 @@ root - INFO - Testing create_preprocessing_pipeline function: SUCCESS
 root - INFO - Transformation successfuly completed.
 root - INFO - Testing create_model_pipeline function: SUCCESS
 root - INFO - Model successfuly fit: SUCCESS
-root - INFO - AUC scores = 0.9859235662730075 indicating better than random performance
+root - INFO - AUC scores = 0.9869613613588218 indicating better than random performance
