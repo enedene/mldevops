@@ -46,7 +46,6 @@ def perform_eda(data_df):
     perform eda on df and save figures to images folder
     input:
             data_df: pandas dataframe
-
     output:
             None
     '''
@@ -55,15 +54,18 @@ def perform_eda(data_df):
         density_plot = sns.histplot(
             data_df[column], stat='density', kde=True).get_figure()
         density_plot.savefig("./images/eda/{}_density.png".format(column))
+    for column in constants.MPL_BAR_COLUMNS:
+        fig = plt.figure(figsize=constants.FIG_SIZE)
+        data_df[column].value_counts().plot.bar(
+            title=column, xlabel=column, ylabel='Frequency')
+        fig.savefig("./images/eda/{}_bar.png".format(column))
+
     for column in constants.MPL_HIST_COLUMNS:
         fig = plt.figure(figsize=constants.FIG_SIZE)
-        data_df[column].hist()
+        ax = data_df[column].hist()
+        ax.set_xlabel(column)
+        ax.set_ylabel("Frequency")
         fig.savefig("./images/eda/{}_hist.png".format(column))
-
-    for column in constants.MPL_HIST_NORM_COLUMNS:
-        fig = plt.figure(figsize=constants.FIG_SIZE)
-        data_df[column].value_counts(normalize=True).hist()
-        fig.savefig("./images/eda/{}_hist_normalized.png".format(column))
 
     heat_map = sns.heatmap(data_df.corr(), annot=False,
                            cmap='Dark2_r', linewidths=2)
@@ -80,7 +82,6 @@ def create_preprocessing_pipeline(categorical, numerical):
     to 0 mean and 1 variance.
 
     input:
-            df: pandas dataframe
             categorical: list of strings - categorical features
             response: list of strings - numerical features
     output:

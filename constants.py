@@ -32,8 +32,8 @@ QUANT_COLUMNS = [
     'Avg_Utilization_Ratio'
 ]
 
-MPL_HIST_COLUMNS = ['Churn', 'Customer_Age']
-MPL_HIST_NORM_COLUMNS = ['Marital_Status']
+MPL_BAR_COLUMNS = ['Churn', 'Marital_Status']
+MPL_HIST_COLUMNS = ['Customer_Age']
 SNS_DENSITY_COLUMNS = ['Total_Trans_Ct']
 
 FIG_SIZE = (20, 10)
